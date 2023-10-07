@@ -16,7 +16,7 @@ function MobileLinkNavbar({ children, title, ...rest }: Props) {
       'relative grid place-items-center gap-y-0.5 text-xs text-gray-400 transition-colors duration-300 hover:text-violet-500',
       pathname === rest.href && 'text-violet-500'
     ),
-    designer: clsx('absolute -top-[500%] rounded-full bg-violet-500 fill-white p-2')
+    designer: clsx('absolute -top-[475%] rounded-full bg-violet-500 fill-white p-2')
   }
 
   return (

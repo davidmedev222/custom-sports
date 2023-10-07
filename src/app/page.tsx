@@ -1,6 +1,6 @@
 function HomePage() {
   return (
-    <main className='overflow-y-auto'>
+    <main>
       <h1 className='text-8xl uppercase'>hello word</h1>
       <h1 className='text-8xl uppercase'>hello word</h1>
       <h1 className='text-8xl uppercase'>hello word</h1>

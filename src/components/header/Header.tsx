@@ -12,7 +12,7 @@ import Link from 'next/link'
 
 function Header() {
   return (
-    <header className='row-start-2 sm:row-start-1 sm:flex sm:items-center sm:justify-between sm:gap-x-8 sm:px-8 sm:py-4'>
+    <header className='fixed bottom-0 h-fit w-full bg-white sm:top-0 sm:flex sm:items-center sm:justify-between sm:gap-x-8 sm:px-8 sm:py-4'>
       <Link className='hidden sm:block' href={Routes.Home}>
         <LogoIcon className='h-8 w-8 fill-black' />
       </Link>

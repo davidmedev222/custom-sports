@@ -13,7 +13,7 @@ interface Props {
 function RootLayout({ children }: Props) {
   return (
     <html lang='en'>
-      <body className='grid max-h-screen min-h-screen grid-rows-layout-mobile sm:grid-rows-layout-desktop'>
+      <body>
         <Header />
         {children}
       </body>
