@@ -5,14 +5,21 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
+    "clsx": "^2.0.0",
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
+    "husky": "^8.0.3",
     "postcss": "^8",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.5",
     "tailwindcss": "^3",
+    "ts-standard": "^12.0.2",
     "typescript": "^5"
   },
   "name": "custom-sports",
@@ -21,6 +28,7 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
+    "prepare": "husky install",
     "start": "next start"
   },
   "version": "0.1.0"
