@@ -24,6 +24,7 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
+    "prepare": "husky install",
     "start": "next start"
   },
   "version": "0.1.0"
