@@ -1,3 +1,4 @@
+import { Header } from '@/components'
 import '../styles/globals.css'
 
 export const metadata = {
@@ -12,7 +13,10 @@ interface Props {
 function RootLayout({ children }: Props) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body className='grid-rows-layout-mobile sm:grid-rows-layout-desktop grid min-h-screen'>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
