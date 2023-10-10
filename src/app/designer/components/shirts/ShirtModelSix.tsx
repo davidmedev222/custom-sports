@@ -1,10 +1,33 @@
+import { Colors, ShirtModels } from '@/models'
+import clsx from 'clsx'
+
 interface Props {
   className: string
+  shirtModel?: ShirtModels
+  shirtModelColor?: Colors
 }
 
-function ShirtModelSix({ className }: Props) {
+function ShirtModelSix({ className, shirtModel, shirtModelColor }: Props) {
+  const classes = clsx(
+    'opacity-0',
+    shirtModel === 'six' && 'opacity-100',
+    shirtModelColor === 'yellow' && 'fill-yellow-500',
+    shirtModelColor === 'red' && 'fill-red-500',
+    shirtModelColor === 'blue' && 'fill-blue-500',
+    shirtModelColor === 'green' && 'fill-green-500',
+    shirtModelColor === 'orange' && 'fill-orange-500',
+    shirtModelColor === 'violet' && 'fill-violet-500',
+    shirtModelColor === 'gray' && 'fill-gray-500',
+    shirtModelColor === 'black' && 'fill-black',
+    shirtModelColor === 'white' && 'fill-white',
+    shirtModelColor === 'cyan' && 'fill-cyan-500',
+    shirtModelColor === 'pink' && 'fill-pink-500',
+    shirtModelColor === 'lime' && 'fill-lime-500',
+    className
+  )
+
   return (
-    <svg className={className} viewBox='0 0 1414 792' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <svg className={classes} viewBox='0 0 1414 792' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <g style={{ mixBlendMode: 'multiply' }}>
         <mask
           id='mask0_39_2332'

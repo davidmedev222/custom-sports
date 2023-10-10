@@ -1,3 +1,8 @@
+export { default as DesignPreview } from './DesignPreview'
+export { default as Color } from './list/Color'
+export { default as ColorList } from './list/ColorList'
+export { default as NumberModelList } from './list/NumberModelList'
+export { default as ShirtModelList } from './list/ShirtModelList'
 export { default as NumberModelFive } from './numbers/NumberModelFive'
 export { default as NumberModelFour } from './numbers/NumberModelFour'
 export { default as NumberModelOne } from './numbers/NumberModelOne'

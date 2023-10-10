@@ -1,10 +1,30 @@
+import { Colors } from '@/models'
+import clsx from 'clsx'
+
 interface Props {
-  className: string
+  className?: string
+  shirtBaseColor: Colors
 }
 
-function ShirtModelBase({ className }: Props) {
+function ShirtModelBase({ className, shirtBaseColor }: Props) {
+  const classes = clsx(
+    shirtBaseColor === 'yellow' && 'fill-yellow-500',
+    shirtBaseColor === 'red' && 'fill-red-500',
+    shirtBaseColor === 'blue' && 'fill-blue-500',
+    shirtBaseColor === 'green' && 'fill-green-500',
+    shirtBaseColor === 'orange' && 'fill-orange-500',
+    shirtBaseColor === 'violet' && 'fill-violet-500',
+    shirtBaseColor === 'gray' && 'fill-gray-500',
+    shirtBaseColor === 'black' && 'fill-black',
+    shirtBaseColor === 'white' && 'fill-white',
+    shirtBaseColor === 'cyan' && 'fill-cyan-500',
+    shirtBaseColor === 'pink' && 'fill-pink-500',
+    shirtBaseColor === 'lime' && 'fill-lime-500',
+    className
+  )
+
   return (
-    <svg className={className} viewBox='0 0 1414 792' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <svg className={classes} viewBox='0 0 1414 792' xmlns='http://www.w3.org/2000/svg'>
       <g style={{ mixBlendMode: 'multiply' }}>
         <path
           fillRule='evenodd'

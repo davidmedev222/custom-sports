@@ -1,10 +1,33 @@
+import { Colors, ShirtModels } from '@/models'
+import clsx from 'clsx'
+
 interface Props {
   className: string
+  shirtModel?: ShirtModels
+  shirtModelColor?: Colors
 }
 
-function ShirtModelThree({ className }: Props) {
+function ShirtModelThree({ className, shirtModel, shirtModelColor }: Props) {
+  const classes = clsx(
+    'opacity-0',
+    shirtModel === 'three' && 'opacity-100',
+    shirtModelColor === 'yellow' && 'fill-yellow-500',
+    shirtModelColor === 'red' && 'fill-red-500',
+    shirtModelColor === 'blue' && 'fill-blue-500',
+    shirtModelColor === 'green' && 'fill-green-500',
+    shirtModelColor === 'orange' && 'fill-orange-500',
+    shirtModelColor === 'violet' && 'fill-violet-500',
+    shirtModelColor === 'gray' && 'fill-gray-500',
+    shirtModelColor === 'black' && 'fill-black',
+    shirtModelColor === 'white' && 'fill-white',
+    shirtModelColor === 'cyan' && 'fill-cyan-500',
+    shirtModelColor === 'pink' && 'fill-pink-500',
+    shirtModelColor === 'lime' && 'fill-lime-500',
+    className
+  )
+
   return (
-    <svg className={className} viewBox='0 0 1414 792' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <svg className={classes} viewBox='0 0 1414 792' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <g style={{ mixBlendMode: 'multiply' }}>
         <path
           d='M118.522 323.14C117.774 327.192 115.901 329.331 114.885 331.265C112.085 336.637 112.026 339.502 110.85 341.426C110.143 342.603 108.977 343.513 107.632 343.534C77.1744 344.045 27.6875 326.568 10.6106 316.817C10.1424 316.551 6.7549 314.289 6.32649 314.044C0.139369 310.432 -0.727418 307.546 0.448233 303.095C1.03606 300.854 2.4807 299.851 3.79584 293.835C4.21429 291.921 4.03495 288.309 5.56928 287.695C6.60544 288.565 7.82096 289.404 9.22577 290.223C9.72392 290.519 10.2719 290.785 10.79 291.113C25.2067 300.23 71.9338 319.129 118.512 323.14H118.522Z'
