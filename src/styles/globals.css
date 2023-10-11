@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .p-main {
+    @apply px-4 pb-32 pt-8 sm:px-8 sm:py-[82px];
+  }
+}

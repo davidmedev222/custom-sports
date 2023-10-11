@@ -8,9 +8,8 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
       },
-      gridTemplateRows: {
-        'layout-mobile': '1fr auto',
-        'layout-desktop': 'auto 1fr'
+      screens: {
+        xmd: '868px'
       }
     }
   },

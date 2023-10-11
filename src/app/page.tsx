@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 function HomePage() {
   return (
-    <main className='grid min-h-screen items-center gap-8 px-4 py-[82px] sm:grid-cols-2 sm:px-8'>
+    <main className='p-main mx-auto grid min-h-screen max-w-screen-xl items-center gap-8 sm:grid-cols-2 '>
       <CallToAction />
       <Image
         src='/assets/shirt.webp'
