@@ -1,5 +1,6 @@
+'use client'
 import { ShirtModels } from '@/models'
-import clsx from 'clsx'
+import { useDesignerStore, useStore } from '@/store'
 import {
   ShirtModelEight,
   ShirtModelFive,
@@ -11,44 +12,38 @@ import {
   ShirtModelTwo
 } from '../index'
 
-interface Props {
-  heading: string
-  onChangeModel: (model: ShirtModels) => void
+interface Models {
+  name: ShirtModels
+  component: JSX.Element
 }
 
-function ShirtModelList({ heading, onChangeModel }: Props) {
-  const classes = {
-    item: clsx('cursor-pointer rounded-xl p-3 shadow-xl hover:outline hover:outline-violet-500'),
-    model: clsx('opacity-100')
-  }
+interface Props {
+  heading: string
+}
+
+function ShirtModelList({ heading }: Props) {
+  const shirtModel = useStore(useDesignerStore, (state) => state.designer)?.shirtModel
+  const changeShirtModel = useDesignerStore((state) => state.changeShirtModel)
+
+  const models: Models[] = [
+    { name: 'one', component: <ShirtModelOne isPreview shirtModel={shirtModel} /> },
+    { name: 'two', component: <ShirtModelTwo isPreview shirtModel={shirtModel} /> },
+    { name: 'three', component: <ShirtModelThree isPreview shirtModel={shirtModel} /> },
+    { name: 'four', component: <ShirtModelFour isPreview shirtModel={shirtModel} /> },
+    { name: 'five', component: <ShirtModelFive isPreview shirtModel={shirtModel} /> },
+    { name: 'six', component: <ShirtModelSix isPreview shirtModel={shirtModel} /> },
+    { name: 'seven', component: <ShirtModelSeven isPreview shirtModel={shirtModel} /> },
+    { name: 'eight', component: <ShirtModelEight isPreview shirtModel={shirtModel} /> }
+  ]
 
   return (
     <ul className='grid grid-cols-3 gap-2'>
       <li className='col-span-3 font-medium'>{heading}</li>
-      <li onClick={() => onChangeModel('one')} className={classes.item}>
-        <ShirtModelOne className={classes.model} />
-      </li>
-      <li onClick={() => onChangeModel('two')} className={classes.item}>
-        <ShirtModelTwo className={classes.model} />
-      </li>
-      <li onClick={() => onChangeModel('three')} className={classes.item}>
-        <ShirtModelThree className={classes.model} />
-      </li>
-      <li onClick={() => onChangeModel('four')} className={classes.item}>
-        <ShirtModelFour className={classes.model} />
-      </li>
-      <li onClick={() => onChangeModel('five')} className={classes.item}>
-        <ShirtModelFive className={classes.model} />
-      </li>
-      <li onClick={() => onChangeModel('six')} className={classes.item}>
-        <ShirtModelSix className={classes.model} />
-      </li>
-      <li onClick={() => onChangeModel('seven')} className={classes.item}>
-        <ShirtModelSeven className={classes.model} />
-      </li>
-      <li onClick={() => onChangeModel('eight')} className={classes.item}>
-        <ShirtModelEight className={classes.model} />
-      </li>
+      {models.map((model) => (
+        <li key={model.name} onClick={() => changeShirtModel(model.name)}>
+          {model.component}
+        </li>
+      ))}
     </ul>
   )
 }
