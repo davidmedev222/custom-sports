@@ -30,7 +30,7 @@ function DesignPreview({ design }: Props) {
   }
 
   return (
-    <div className='grid'>
+    <div className='sticky top-0 grid bg-white'>
       <ShirtModelBase shirtBaseColor={shirtBaseColor} className={classes.model} />
       <ShirtModelOne className={classes.model} shirtModel={shirtModel} shirtModelColor={shirtModelColor} />
       <ShirtModelTwo className={classes.model} shirtModel={shirtModel} shirtModelColor={shirtModelColor} />
