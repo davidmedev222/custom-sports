@@ -1,5 +1,6 @@
+'use client'
 import { NumberModels } from '@/models'
-import clsx from 'clsx'
+import { useDesignerStore, useStore } from '@/store'
 import {
   NumberModelFive,
   NumberModelFour,
@@ -9,40 +10,38 @@ import {
   NumberModelTwo
 } from '../index'
 
-interface Props {
-  heading: string
-  onChangeModel: (model: NumberModels) => void
+interface Models {
+  name: NumberModels
+  component: JSX.Element
 }
 
-function ModelList({ heading, onChangeModel }: Props) {
-  const classes = {
-    item: clsx('cursor-pointer rounded-xl p-3 shadow-xl hover:outline hover:outline-violet-500'),
-    model: clsx('opacity-100')
-  }
+interface Props {
+  heading: string
+}
+
+function NumbeModelList({ heading }: Props) {
+  const numberModel = useStore(useDesignerStore, (state) => state.designer)?.numberModel
+  const changeNumberModel = useDesignerStore((state) => state.changeNumberModel)
+
+  const models: Models[] = [
+    { name: 'one', component: <NumberModelOne isPreview numberModel={numberModel} /> },
+    { name: 'two', component: <NumberModelTwo isPreview numberModel={numberModel} /> },
+    { name: 'three', component: <NumberModelThree isPreview numberModel={numberModel} /> },
+    { name: 'four', component: <NumberModelFour isPreview numberModel={numberModel} /> },
+    { name: 'five', component: <NumberModelFive isPreview numberModel={numberModel} /> },
+    { name: 'six', component: <NumberModelSix isPreview numberModel={numberModel} /> }
+  ]
 
   return (
     <ul className='grid grid-cols-3 gap-2'>
       <li className='col-span-3 font-medium'>{heading}</li>
-      <li className={classes.item} onClick={() => onChangeModel('one')}>
-        <NumberModelOne className={classes.model} />
-      </li>
-      <li className={classes.item} onClick={() => onChangeModel('two')}>
-        <NumberModelTwo className={classes.model} />
-      </li>
-      <li className={classes.item} onClick={() => onChangeModel('three')}>
-        <NumberModelThree className={classes.model} />
-      </li>
-      <li className={classes.item} onClick={() => onChangeModel('four')}>
-        <NumberModelFour className={classes.model} />
-      </li>
-      <li className={classes.item} onClick={() => onChangeModel('five')}>
-        <NumberModelFive className={classes.model} />
-      </li>
-      <li className={classes.item} onClick={() => onChangeModel('six')}>
-        <NumberModelSix className={classes.model} />
-      </li>
+      {models.map((model) => (
+        <li key={model.name} onClick={() => changeNumberModel(model.name)}>
+          {model.component}
+        </li>
+      ))}
     </ul>
   )
 }
 
-export default ModelList
+export default NumbeModelList

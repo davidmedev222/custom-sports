@@ -1,3 +1,4 @@
+export { default as DesignOptions } from './DesignOptions'
 export { default as DesignPreview } from './DesignPreview'
 export { default as Color } from './list/Color'
 export { default as ColorList } from './list/ColorList'

@@ -2,15 +2,18 @@ import { Colors, NumberModels } from '@/models'
 import clsx from 'clsx'
 
 interface Props {
-  className: string
+  className?: string
   numberModel?: NumberModels
   numberBaseColor?: Colors
+  isPreview?: boolean
 }
 
-function NumberModelFive({ className, numberModel, numberBaseColor }: Props) {
+function NumberModelFive({ className, numberModel, numberBaseColor, isPreview }: Props) {
   const classes = clsx(
     'opacity-0',
     numberModel === 'five' && 'opacity-100',
+    isPreview && 'cursor-pointer rounded-xl p-3 opacity-100 shadow-xl hover:outline hover:outline-violet-500',
+    isPreview && numberModel === 'five' && 'outline outline-violet-500',
     numberBaseColor === 'yellow' && 'fill-yellow-500 stroke-yellow-500',
     numberBaseColor === 'red' && 'fill-red-500 stroke-red-500',
     numberBaseColor === 'blue' && 'fill-blue-500 stroke-blue-500',

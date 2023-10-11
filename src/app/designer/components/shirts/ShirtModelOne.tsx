@@ -2,15 +2,18 @@ import { Colors, ShirtModels } from '@/models'
 import clsx from 'clsx'
 
 interface Props {
-  className: string
+  className?: string
   shirtModel?: ShirtModels
   shirtModelColor?: Colors
+  isPreview?: boolean
 }
 
-function ShirtModelOne({ className, shirtModel, shirtModelColor }: Props) {
+function ShirtModelOne({ className, shirtModel, shirtModelColor, isPreview }: Props) {
   const classes = clsx(
     'opacity-0',
     shirtModel === 'one' && 'opacity-100',
+    isPreview && 'cursor-pointer rounded-xl p-3 opacity-100 shadow-xl hover:outline hover:outline-violet-500',
+    isPreview && shirtModel === 'one' && 'outline outline-violet-500',
     shirtModelColor === 'yellow' && 'fill-yellow-500 stroke-yellow-500',
     shirtModelColor === 'red' && 'fill-red-500 stroke-red-500',
     shirtModelColor === 'blue' && 'fill-blue-500 stroke-blue-500',

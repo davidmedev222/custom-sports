@@ -3,10 +3,10 @@ import clsx from 'clsx'
 
 interface Props {
   className?: string
-  shirtBaseColor: Colors
+  shirtBaseColor?: Colors
 }
 
-function ShirtModelBase({ className, shirtBaseColor }: Props) {
+function ShirtModelBase({ className, shirtBaseColor = 'black' }: Props) {
   const classes = clsx(
     shirtBaseColor === 'yellow' && 'fill-yellow-500',
     shirtBaseColor === 'red' && 'fill-red-500',
