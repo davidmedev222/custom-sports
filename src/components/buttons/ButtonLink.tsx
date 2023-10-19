@@ -4,12 +4,14 @@ import Link, { LinkProps } from 'next/link'
 interface Props extends LinkProps {
   children: React.ReactNode
   className?: string
+  variant?: 'primary'
   iconLeft?: JSX.Element
 }
 
-function LinkButton({ children, className, iconLeft, ...rest }: Props) {
+function ButtonLink({ children, className, variant, iconLeft, ...rest }: Props) {
   const classes = clsx(
-    'rounded-full bg-violet-500 p-2 text-white transition-colors duration-300 hover:bg-violet-700',
+    'rounded-full shadow-2xl transition duration-300',
+    variant === 'primary' && 'bg-violet-500 px-5 py-2 text-white hover:scale-105 hover:bg-violet-700',
     iconLeft && 'flex items-center gap-x-4',
     className
   )
@@ -22,4 +24,4 @@ function LinkButton({ children, className, iconLeft, ...rest }: Props) {
   )
 }
 
-export default LinkButton
+export default ButtonLink

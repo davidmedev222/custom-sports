@@ -1,4 +1,4 @@
-import { ArrowRightIcon, LinkButton, ShippingIcon, SupportIcon, VerifiedIcon } from '@/components'
+import { ArrowRightIcon, ButtonLink, ShippingIcon, SupportIcon, VerifiedIcon } from '@/components'
 import { Routes } from '@/utils'
 
 function CallToAction() {
@@ -7,12 +7,13 @@ function CallToAction() {
       <span className='font-medium uppercase'>+33k sales made</span>
       <h1 className='text-5xl font-medium text-violet-500'>Custom Sports</h1>
       <p>T-shirts are 100% sublimated, with customized designs as shown in the images.</p>
-      <LinkButton
+      <ButtonLink
+        variant='primary'
         href={Routes.Designer}
         iconLeft={<ArrowRightIcon className='rounded-full bg-white fill-black p-1.5' />}
       >
         Create Design
-      </LinkButton>
+      </ButtonLink>
       <ul className='grid gap-y-2 text-xs'>
         <li className='grid grid-cols-[auto_1fr] items-center gap-x-2'>
           <VerifiedIcon /> Shop with confidence from home.
