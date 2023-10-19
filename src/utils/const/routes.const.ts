@@ -3,7 +3,8 @@ export const enum Routes {
   Discover = '/discover',
   Designer = '/designer',
   Cart = '/cart',
-  Profile = '/profile'
+  Profile = '/profile',
+  ModalAuth = '?sw=t'
 }
 
 export const LinkRoutes = [

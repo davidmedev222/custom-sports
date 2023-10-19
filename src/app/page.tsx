@@ -7,10 +7,9 @@ function HomePage() {
       <CallToAction />
       <Image
         src='/assets/shirt.webp'
-        className='col-start-1 row-start-2 justify-self-center sm:col-start-2 sm:row-start-1 lg:-translate-x-20 lg:-translate-y-10'
+        className='col-start-1 row-start-2 hidden justify-self-center sm:col-start-2 sm:row-start-1 lg:block lg:-translate-x-20'
         width={345}
         height={446}
-        priority
         alt='Image with customized violet and black design'
       />
       <Image

@@ -1,4 +1,4 @@
-import { Header } from '@/components'
+import { Header, ModalAuth } from '@/components'
 import '../styles/globals.css'
 
 export const metadata = {
@@ -16,6 +16,7 @@ function RootLayout({ children }: Props) {
       <body>
         <Header />
         {children}
+        <ModalAuth />
       </body>
     </html>
   )
