@@ -1,12 +1,4 @@
-import {
-  ArrowRightIcon,
-  ButtonLink,
-  CartIcon,
-  DesktopLinkNavbar,
-  DesktopNavbar,
-  LogoIcon,
-  MobileNavbar
-} from '@/components'
+import { ButtonAuth, CartIcon, DesktopLinkNavbar, DesktopNavbar, LogoIcon, MobileNavbar } from '@/components'
 import { Routes } from '@/utils'
 import Link from 'next/link'
 
@@ -22,13 +14,7 @@ function Header() {
         <DesktopLinkNavbar href={Routes.Cart}>
           <CartIcon />
         </DesktopLinkNavbar>
-        <ButtonLink
-          variant='primary'
-          href={Routes.ModalAuth}
-          iconLeft={<ArrowRightIcon className='rounded-full bg-white fill-black p-1.5' />}
-        >
-          Create Account
-        </ButtonLink>
+        <ButtonAuth />
       </div>
     </header>
   )

@@ -1,13 +1,16 @@
+'use client'
 import clsx from 'clsx'
+import { MouseEventHandler } from 'react'
 
 interface Props {
   children: React.ReactNode
   className?: string
-  variant?: 'primary' | 'github' | 'google'
+  variant: 'primary' | 'github' | 'google'
+  onClick?: MouseEventHandler<HTMLButtonElement>
   iconLeft?: JSX.Element
 }
 
-function ButtonLink({ children, className, variant, iconLeft }: Props) {
+function Button({ children, className, variant, onClick, iconLeft }: Props) {
   const classes = clsx(
     'rounded-full shadow-2xl transition duration-300',
     iconLeft && 'flex flex-wrap items-center justify-center gap-x-4',
@@ -18,11 +21,11 @@ function ButtonLink({ children, className, variant, iconLeft }: Props) {
   )
 
   return (
-    <button className={classes}>
+    <button onClick={onClick} className={classes}>
       {iconLeft && iconLeft}
       {children}
     </button>
   )
 }
 
-export default ButtonLink
+export default Button

@@ -4,7 +4,7 @@ import Link, { LinkProps } from 'next/link'
 interface Props extends LinkProps {
   children: React.ReactNode
   className?: string
-  variant?: 'primary'
+  variant?: 'primary' | 'user'
   iconLeft?: JSX.Element
 }
 
@@ -12,6 +12,7 @@ function ButtonLink({ children, className, variant, iconLeft, ...rest }: Props) 
   const classes = clsx(
     'rounded-full shadow-2xl transition duration-300',
     variant === 'primary' && 'bg-violet-500 px-5 py-2 text-white hover:scale-105 hover:bg-violet-700',
+    variant === 'user' && 'bg-violet-500 p-1',
     iconLeft && 'flex items-center gap-x-4',
     className
   )
