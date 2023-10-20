@@ -1,5 +1,7 @@
 import { Header, ModalAuth } from '@/components'
+import { getServerSession } from 'next-auth'
 import '../styles/globals.css'
+import Providers from './providers'
 
 export const metadata = {
   title: 'Custom Sports',
@@ -10,13 +12,17 @@ interface Props {
   children: React.ReactNode
 }
 
-function RootLayout({ children }: Props) {
+async function RootLayout({ children }: Props) {
+  const session = await getServerSession()
+
   return (
     <html lang='en'>
       <body>
-        <Header />
-        {children}
-        <ModalAuth />
+        <Providers>
+          <Header />
+          {children}
+          {session === null && <ModalAuth />}
+        </Providers>
       </body>
     </html>
   )
