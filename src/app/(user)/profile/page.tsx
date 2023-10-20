@@ -15,7 +15,8 @@ function ProfilePage() {
       <h1>Profile page</h1>
       <p>{session?.user?.name}</p>
       <p>{session?.user?.email}</p>
-      <Image src={session?.user?.image ?? ''} width={100} height={100} alt='User profile' />
+      <p>{session?.user?.id}</p>
+      <Image src={session?.user?.image ?? '/assets/avatar.webp'} width={100} height={100} alt='User profile' />
       <Button onClick={async () => await signOut()} variant='primary'>
         Cerrar Sesion
       </Button>
