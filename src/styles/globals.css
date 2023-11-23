@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* INPUTS */
+  [type='text'],
+  input:where(:not([type])),
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select {
+    @apply w-full border-l-0 border-r-0 border-t-0 border-gray-300 bg-transparent focus:border-l-0 focus:border-r-0 focus:border-t-0 focus:border-violet-500 focus:ring-0;
+  }
+
+  textarea {
+    @apply resize-none;
+  }
+
+  [aria-invalid='true'] {
+    @apply border-red-500  focus:border-red-500;
+  }
+}
+
 @layer utilities {
   .p-main {
     @apply px-4 pb-32 pt-8 sm:px-8 sm:py-[82px];
