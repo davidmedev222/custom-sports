@@ -1,5 +1,6 @@
 'use client'
 import { Routes } from '@/utils'
+import clsx from 'clsx'
 import { signIn } from 'next-auth/react'
 import { Button, GithubIcon, GoogleIcon } from '../index'
 
@@ -9,12 +10,12 @@ interface Props {
 }
 
 function SignInForm({ className, error }: Props) {
-  const classes = `grid max-w-sm gap-y-3 text-center ${className ?? ''}`
+  const classes = clsx('grid max-w-sm gap-y-3 text-center', className)
 
   return (
     <div className={classes}>
-      <p className='my-4 text-3xl font-semibold sm:text-4xl'>Custom Sports</p>
-      <p className='text-xl font-medium sm:text-2xl'>Welcome to Custom Sports!</p>
+      <p className='my-4 text-4xl font-semibold'>Custom Sports</p>
+      <p className='text-2xl font-medium'>Welcome to Custom Sports!</p>
       <p>Choose how you want to continue to create an account.</p>
       {error && error}
       <div className='my-4 grid gap-y-4'>

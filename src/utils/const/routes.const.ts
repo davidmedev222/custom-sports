@@ -4,7 +4,7 @@ export const enum Routes {
   Designer = '/designer',
   Cart = '/cart',
   Profile = '/profile',
-  ModalAuth = '?sw=t'
+  Login = '/login'
 }
 
 export const LinkRoutes = [

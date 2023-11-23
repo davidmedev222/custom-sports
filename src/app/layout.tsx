@@ -1,5 +1,4 @@
-import { Header, ModalAuth } from '@/components'
-import { getServerSession } from 'next-auth'
+import { Header } from '@/components'
 import '../styles/globals.css'
 import Providers from './providers'
 
@@ -13,15 +12,12 @@ interface Props {
 }
 
 async function RootLayout({ children }: Props) {
-  const session = await getServerSession()
-
   return (
     <html lang='en'>
       <body>
         <Providers>
           <Header />
           {children}
-          {session === null && <ModalAuth />}
         </Providers>
       </body>
     </html>

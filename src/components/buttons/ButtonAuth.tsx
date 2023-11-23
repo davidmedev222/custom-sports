@@ -27,7 +27,7 @@ function ButtonAuth() {
   return (
     <ButtonLink
       variant='primary'
-      href={Routes.ModalAuth}
+      href={Routes.Login}
       iconLeft={<ArrowRightIcon className='rounded-full bg-white fill-black p-1.5' />}
     >
       Create Account
